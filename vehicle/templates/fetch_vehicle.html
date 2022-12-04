@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+
+    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
+
+    <title>Vehicle Details</title>
+  </head>
+  <body>
+  
+
+{% block content %}
+    <div id="about" class="contact-area">
+      <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="section-headline text-center">
+                  <h2>Car Details</h2>
+              </div>
+          </div>
+      </div>
+      <br>
+
+      <div class="site-section ">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-6 mb-6 p-2" data-aos="fade"
+                      style="background-color: #f3f9fc; box-shadow: 10px 10px 5px #bce2f5;">
+
+                      <div class="container">
+
+                          <div class="row  d-flex align-items-center">
+
+                              <div class="col-lg-8">
+
+                                  <p>
+                                    <div>
+
+                                      
+
+                                      <div>
+                                        {% for vehicle in vehicles %}
+                                        
+                                        <div class="search-result">
+                                          <h5>
+                                            <a>{{vehicle.regNo}}</a>
+                                          </h5>
+                                          <small>{{vehicle.regNo}}</small>
+                                          <small>{{vehicle.manufacturer}}</small>
+                                          <small>{{vehicle.category}}</small>
+                                         
+                                        </div>
+
+                                        <div>
+
+                                          <small>
+                                            {{vehicle.accidentDescription}}
+  
+                                          </small>
+    
+                                        </div>
+                                  
+                                        {% endfor %}
+                                      </div>
+                                      
+                                    </div>
+                                      
+                                  </p>
+
+
+                              </div>
+                          </div>
+
+
+
+                      </div>
+
+                  </div>
+                 
+
+
+
+          </div>
+      </div>
+  </div>
+    
+
+  </div>
+
+    {% endblock content %}
+  </body>
+</html>

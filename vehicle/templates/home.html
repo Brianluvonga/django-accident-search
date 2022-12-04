@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}"
+      rel="stylesheet"
+    />
+
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
+
+    <title>Accident Report</title>
+
+    <style>
+      .menu {
+        font-size: 20px;
+        font-family: "Courier New", Courier, monospace;
+        margin: 30px auto;
+        text-align: center;
+        color: black;
+      }
+
+      .side-container {
+        margin: 10px;
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+      }
+
+      .btn {
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        letter-spacing: 1px;
+        display: inline-block;
+        padding: 12px 32px;
+        border-radius: 50px;
+        transition: 0.5s;
+        line-height: 1;
+        margin: 10px;
+        color: #fff;
+        -webkit-animation-delay: 0.8s;
+        animation-delay: 0.8s;
+        border: 1px solid #68a4c4;
+      }
+
+      .btn :hover {
+        background: #7ca8c0;
+        color: #fff;
+        /* text-decoration: none; */
+      }
+    </style>
+  </head>
+
+  <body bgcolor="white">
+    <div class="menu">
+      <div class="btn" style="border-radius: 30px 30px; width: 100px">
+        <a href="{% url 'home' %}">Home</a>
+      </div>
+
+      <div class="btn">
+        <a
+          href="{% url 'searchVehiclePage'%}"
+          style="border-radius: 30px 30px; width: 100px"
+          >Search</a
+        >
+      </div>
+      <div class="btn">
+        <a
+          href="{% url 'reportvehicle'%}"
+          style="border-radius: 30px 30px; width: 100px"
+          >Report</a
+        >
+      </div>
+    </div>
+  </body>
+</html>
